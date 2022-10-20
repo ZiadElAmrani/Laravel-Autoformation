@@ -21,10 +21,9 @@ Route::get('/', function () {
 Route::get('/request', function () {
     return view('request');
 });
+
 // route with request
 
 Route::any('/user', function (Request $request) {
-    $name = $request->input("name");
-    return $name;
+    return $name = $request->input("name");
 });
-
