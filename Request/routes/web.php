@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
-use App\Http\Controllers\MyController;
-use App\Http\Controllers\SingleController;
-use App\Http\Controllers\PromotionController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/request', function () {
+    return view('request');
+});
+// route with request
 
-//Controlller route
-Route::get("/test",[MyController::class,"show"]);
+Route::any('/user', function (Request $request) {
+    $name = $request->input("name");
+    return $name;
+});
 
-//SingleController
-
-Route::get('/single', SingleController::class);
-
-// Controller route with *  functions
-Route::resource('/promotions', PromotionController::class);
