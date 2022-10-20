@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MyController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SingleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::get("/test",[MyController::class,"show"]);
 
 //SingleController
 
+Route::get('/single', SingleController::class);
