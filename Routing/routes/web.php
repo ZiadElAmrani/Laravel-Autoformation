@@ -22,11 +22,13 @@ Route::get('/index', function () {
     return 'Hello World';
 });
 
-//controller route
-
-Route::get('/hello', [Controller::class, 'index']);
-
-
+//Route whith parameters
+Route::get('/param/{param1}', function($id){
+    return "kda kda: $id";
+});
+Route::get('/param/{param1}/{param2}', function($id,$name){
+    return "kda kda: $id, $name";
+});
 
 // route with view
 
@@ -39,5 +41,4 @@ Route::any('/user', function (Request $request) {
     $name = $request->input("name");
     return $name;
 });
-
 
