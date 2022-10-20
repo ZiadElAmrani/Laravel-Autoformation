@@ -17,6 +17,9 @@ use App\Models\Post;
 */
 
 
+Route::get('/', [SingleController::class, 'index'])->name('home');
+
+
 
 //Routes
 Route::get('/', function () {
